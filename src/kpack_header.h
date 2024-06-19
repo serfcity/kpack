@@ -37,6 +37,13 @@ struct kpack_header {
 int kpack_read_header_bin(struct kpack_header_bin *, FILE*);
 
 /* Do: */
+/*   Read binary header from file */
+/* Errors: */
+/*   0 = No error */
+/*   1 = Writing failed */
+int kpack_write_header_bin(struct kpack_header_bin *, FILE*);
+
+/* Do: */
 /*   Pack kpack_header to kpack_header_bin */
 void kpack_header_pack(struct kpack_header *, struct kpack_header_bin *);
 
