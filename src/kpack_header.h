@@ -56,9 +56,8 @@ void kpack_header_pack(struct kpack_header *, struct kpack_header_bin *);
 
 /* Do: */
 /*   Unpack kpack_header_bin to kpack_header */
-/* Errors: */
-/*   0 = No error */
-/*   1 = Invalid kpack_header_bin data */
+/*   IF BINARY HEADER NOT VALID -> UNDEFINED BEHAVOUR */
+/*   USE kpack_verfy_header_bin FIRST */
 int kpack_header_unpack(struct kpack_header *, struct kpack_header_bin *);
 
 
