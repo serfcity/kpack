@@ -34,14 +34,21 @@ struct kpack_header {
 /* Errors: */
 /*   0 = No error */
 /*   1 = Reading failed */
-int kpack_read_header_bin(struct kpack_header_bin *, FILE*);
+int kpack_read_header_bin(struct kpack_header_bin *, FILE *);
 
 /* Do: */
 /*   Read binary header from file */
 /* Errors: */
 /*   0 = No error */
 /*   1 = Writing failed */
-int kpack_write_header_bin(struct kpack_header_bin *, FILE*);
+int kpack_write_header_bin(struct kpack_header_bin *, FILE *);
+
+/* Do: */
+/*   Verfy binary header */
+/* Errors: */
+/*   0 = OK */
+/*   1 = Invalid header */
+int kpack_verfy_header_bin(struct kpack_header_bin *);
 
 /* Do: */
 /*   Pack kpack_header to kpack_header_bin */
