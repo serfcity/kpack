@@ -1,5 +1,5 @@
-#ifndef KPACK_HEADER_H
-#define KPACK_HEADER_H
+#ifndef KPACK_KPACK_HEADER_H
+#define KPACK_KPACK_HEADER_H
 
 #include <stdio.h>
 
@@ -58,7 +58,7 @@ void kpack_header_pack(struct kpack_header *, struct kpack_header_bin *);
 /*   Unpack kpack_header_bin to kpack_header */
 /*   IF BINARY HEADER NOT VALID -> UNDEFINED BEHAVOUR */
 /*   USE kpack_verfy_header_bin FIRST */
-int kpack_header_unpack(struct kpack_header *, struct kpack_header_bin *);
+void kpack_header_unpack(struct kpack_header *, struct kpack_header_bin *);
 
 
 #endif /* KPACK_HEADER_H */

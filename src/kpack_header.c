@@ -26,7 +26,7 @@ static void
 kpack_header_pack_LE(struct kpack_header *h, struct kpack_header_bin *bh)
 {
 	strncpy(bh->kpck, "KPCK", 4);
-	memcpy(bh->unpacked_size, h->unpacked_size, 4);
+	memcpy(bh->unpacked_size, &h->unpacked_size, 4);
 	bh->flags[0] = h->flags;
 }
 
@@ -34,7 +34,7 @@ kpack_header_pack_LE(struct kpack_header *h, struct kpack_header_bin *bh)
 static void
 kpack_header_unpack_LE(struct kpack_header *h, struct kpack_header_bin *bh)
 {
-	memcpy(bh->unpacked_size, h->unpacked_size);
+	memcpy(bh->unpacked_size, &h->unpacked_size, 4);
 	h->flags = bh->flags[0];
 }
 
