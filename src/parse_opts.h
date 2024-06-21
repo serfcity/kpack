@@ -1,12 +1,16 @@
 #ifndef KPACK_PARSE_OPTS_H
 #define KPACK_PARSE_OPTS_H
 
-#include "bool.h"
-
 /* Mode of kpack */
 enum kpack_mode {
 	kpack_encoding,
 	kpack_decoding
+};
+
+/* Work with stdin/stdout or with custom files? */
+enum kpack_io_mode {
+	kpack_io_file,
+	kpack_io_stream
 };
 
 /* Command-line parameters */
@@ -15,11 +19,10 @@ struct kpack_program_opts {
 	const char *input_file;
 	const char *output_file;
 	
-	kpack_mode mode;
-
-	/* true = file mode, false = POSIX streaming mode */
-	bool is_input_file_mode;
-	bool is_output_file_mode;
+	enum kpack_mode mode;
+	
+        enum kpack_io_mode input_file_mode;
+	enum kpack_io_mode output_file_mode;
 };
 
 /* Do: */
