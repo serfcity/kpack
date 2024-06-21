@@ -16,8 +16,8 @@ enum kpack_io_mode {
 /* Command-line parameters */
 struct kpack_program_opts {
 	/* Input and output filenames, if exists */
-	const char *input_file;
-	const char *output_file;
+	char *input_file;
+	char *output_file;
 	
 	enum kpack_mode mode;
 	
@@ -34,6 +34,8 @@ struct kpack_program_opts {
 /* Errors: */
 /*   0 = No error */
 /*   1 = Invalid arguments */
+/*   2 = Malloc error */
+/*   3 = User want to see `help' */
 int kpack_parse_command_line_opts(struct kpack_program_opts *, int, char **);
 
 /* Do: */
