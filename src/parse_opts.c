@@ -51,35 +51,19 @@ kpack_parse_command_line_opts(struct kpack_program_opts *opt, int argc,
 		/* Parse options, which require next option. */
 		else if (i + 1 < argc) {
 			if (0 == strcmp(argv[i], "-i")) {	
-				char *s;
-				s = kpack_clonestr(argv[i + 1]);
-				if (!s)
-					return 2;
-				opt->input_file = s;
+				opt->input_file = argv[i + 1];
 				is_input_file = true;
 			}
 			else if (0 == strcmp(argv[i], "--input")) {
-				char *s;
-				s = kpack_clonestr(argv[i + 1]);
-				if (!s)
-					return 2;
-				opt->input_file = s;
+				opt->input_file = argv[i + 1];
 				is_input_file = true;
 			}
 			else if (0 == strcmp(argv[i], "-o")) {
-				char *s;
-				s = kpack_clonestr(argv[i + 1]);
-				if (!s)
-					return 2;
-				opt->output_file = s;
+				opt->output_file = argv[i + 1];
 				is_output_file = true;
 			}
 			else if (0 == strcmp(argv[i], "--output")) {
-				char *s;
-				s = kpack_clonestr(argv[i + 1]);
-				if (!s)
-					return 2;
-				opt->output_file = s;
+				opt->output_file = argv[i + 1];
 				is_output_file = true;
 			}
 		}
@@ -121,11 +105,4 @@ kpack_parse_command_line_opts(struct kpack_program_opts *opt, int argc,
 		opt->output_file_mode = kpack_io_stream;
 
 	return 0;
-}
-
-void
-kpack_program_opts_destroy(struct kpack_program_opts *opt)
-{
-	free(opt->input_file);
-	free(opt->output_file);
 }

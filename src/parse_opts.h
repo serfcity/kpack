@@ -56,9 +56,4 @@ struct kpack_program_opts {
 /*   3 = User want to see `help' */
 int kpack_parse_command_line_opts(struct kpack_program_opts *, int, char **);
 
-/* Do: */
-/*   Destroy struct kpack_program_opts created by */
-/*   kpack_parse_command_line_opts */
-void kpack_program_opts_destroy(struct kpack_program_opts *);
-
 #endif /* KPACK_PARSE_OPTS_H */
