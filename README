@@ -1,1 +1,12 @@
-kpack is a KolibriOS-NG archiver, which uses liblzma
+0. WHAT IS IT?
+--------------
+Kpack is a KolibriOS-NG archiver, which uses liblzma.
+
+
+1. HOW TO BUILD?
+----------------
+You should have a ANSI C compiler and BSD Make and liblzma library.
+Set optimization options (or debug options):
+  `export CFLAGS="-02"' -- for release build
+  `export CFLAGS="-O0 -g"' -- for debug build
+And type `bmake'.
